@@ -19,6 +19,9 @@ const ChatPage = () => {
   return (
     <div>
       <h1>Chat Page</h1>
+      {chats.map((chat) => {
+        return <li key={chat._id}>{chat.chatName}</li>;
+      })}
     </div>
   );
 };

@@ -1,6 +1,8 @@
 import { Box, Tabs, Container, Text } from "@chakra-ui/react";
 import React from "react";
 import { useState } from "react";
+import Login from "../components/Authentication/Login";
+import Signup from "../components/Authentication/Signup";
 
 const Homepage = () => {
   const [value, setValue] = useState("first");
@@ -15,7 +17,12 @@ const Homepage = () => {
         borderRadius="lg"
         m="40px 0 15px 0"
       >
-        <Text color="black" fontSize="4xl" fontFamily="work sans">
+        <Text
+          color="black"
+          fontSize="4xl"
+          fontFamily="work sans"
+          fontWeight="500"
+        >
           Talk-A-Tive
         </Text>
       </Box>
@@ -28,13 +35,26 @@ const Homepage = () => {
             padding={2}
             borderRadius="8px"
           >
-            <Tabs.Trigger value="tab-1" width="50%">
+            <Tabs.Trigger
+              value="tab-1"
+              width="50%"
+              _selected={{ background: "blue", color: "white" }}
+            >
               Login
             </Tabs.Trigger>
-            <Tabs.Trigger value="tab-2">Sign Up</Tabs.Trigger>
+            <Tabs.Trigger
+              value="tab-2"
+              _selected={{ background: "blue", color: "white" }}
+            >
+              Sign Up
+            </Tabs.Trigger>
           </Tabs.List>
-          <Tabs.Content value="tab-1">First panel</Tabs.Content>
-          <Tabs.Content value="tab-2">Second panel</Tabs.Content>
+          <Tabs.Content value="tab-1">
+            <Login></Login>
+          </Tabs.Content>
+          <Tabs.Content value="tab-2">
+            <Signup></Signup>
+          </Tabs.Content>
         </Tabs.Root>
       </Box>
     </Container>
